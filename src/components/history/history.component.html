@@ -1,0 +1,18 @@
+
+<div class="bg-white rounded-lg shadow-md p-6">
+  <ul class="space-y-4">
+    @for (item of displayHistory(); track $index) {
+      <li class="flex items-start space-x-4 pb-4 border-b border-gray-200 last:border-b-0">
+        <div class="flex-shrink-0 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center mt-1">
+          <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+        </div>
+        <div class="flex-grow">
+          <p class="font-semibold text-gray-800">{{ item.titulo }}</p>
+          <p class="text-sm text-gray-500">{{ item.data }}</p>
+        </div>
+      </li>
+    } @empty {
+      <p class="text-gray-500">Nenhuma movimentação anterior para exibir.</p>
+    }
+  </ul>
+</div>
